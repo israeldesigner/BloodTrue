@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TrueBlood.Models;
 
@@ -10,5 +11,6 @@ namespace TrueBlood.Repositories
         bool Update(T model);
         bool Delete(uint id);
         IList<T> List();
+        IEnumerable<T> Filter(Func<T, bool> condition);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TrueBlood.Models;
 
@@ -6,11 +7,11 @@ namespace TrueBlood.Repositories
 {
     public abstract class Repository<T> : IRepository<T> where T : BaseModel
     {
-        private readonly IList<T> _table;
+        protected readonly IList<T> Table;
 
         protected Repository()
         {
-            _table = new List<T>();
+            Table = new List<T>();
         }
 
         public T Create(T model)
@@ -18,22 +19,22 @@ namespace TrueBlood.Repositories
             var newModel = model.Copy() as T;
             if (newModel != null)
             {
-                newModel.Id = _table.Any() ? _table.Max(t => t.Id) + 1 : 1;
-                _table.Add(newModel);
+                newModel.Id = Table.Any() ? Table.Max(t => t.Id) + 1 : 1;
+                Table.Add(newModel);
             }
             return newModel;
         }
 
         public T Read(uint id)
         {
-            return _table.FirstOrDefault(t => t.Id == id);
+            return Table.FirstOrDefault(t => t.Id == id);
         }
 
         public bool Update(T model)
         {
             if (model.Id > 0)
             {
-                var oldModel = _table.FirstOrDefault(t => t.Id == model.Id);
+                var oldModel = Table.FirstOrDefault(t => t.Id == model.Id);
                 if (oldModel != null)
                 {
                     var properties = GetType().GetProperties();
@@ -49,10 +50,10 @@ namespace TrueBlood.Repositories
 
         public bool Delete(uint id)
         {
-            var model = _table.FirstOrDefault(t => t.Id == id);
+            var model = Table.FirstOrDefault(t => t.Id == id);
             if (model != null)
             {
-                _table.Remove(model);
+                Table.Remove(model);
                 return true;
             }
             return false;
@@ -60,7 +61,12 @@ namespace TrueBlood.Repositories
 
         public IList<T> List()
         {
-            return _table.Select(t => (T) t.Copy()).ToList();
+            return Table.Select(t => (T) t.Copy()).ToList();
+        }
+
+        public IEnumerable<T> Filter(Func<T, bool> condition)
+        {
+            return Table.Where(condition);
         }
     }
 }
