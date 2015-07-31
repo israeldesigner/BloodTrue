@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrueBlood", "TrueBlood\TrueBlood.csproj", "{956A1762-B22E-4850-A12C-A10CDF30240D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrueBlood.Tests", "TrueBlood.Tests\TrueBlood.Tests.csproj", "{BF6473E4-32E8-4DE4-A5F1-24B6C9D312DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{956A1762-B22E-4850-A12C-A10CDF30240D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{956A1762-B22E-4850-A12C-A10CDF30240D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{956A1762-B22E-4850-A12C-A10CDF30240D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{956A1762-B22E-4850-A12C-A10CDF30240D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF6473E4-32E8-4DE4-A5F1-24B6C9D312DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF6473E4-32E8-4DE4-A5F1-24B6C9D312DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF6473E4-32E8-4DE4-A5F1-24B6C9D312DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF6473E4-32E8-4DE4-A5F1-24B6C9D312DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
