@@ -6,7 +6,13 @@ namespace TrueBlood.Controllers
 {
     public abstract class CrudController<T> : ApiController, ICrudController<T> where T : BaseModel
     {
-        protected IRepository<T> Repository => GetRepository(); //TODO: utilizar intetor de dependência
+        protected IRepository<T> Repository
+        {
+            get
+            {
+                return GetRepository(); //TODO: utilizar intetor de dependência
+            }
+        }
 
         public abstract IRepository<T> GetRepository();
 

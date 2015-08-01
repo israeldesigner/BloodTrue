@@ -17,7 +17,7 @@ namespace TrueBlood.Repositories
                           (p.Nome != null && p.Nome.ToLower().Contains(query)) ||
                           (p.Email != null && p.Email.ToLower().Contains(query)) ||
                           (p.Cidade != null && p.Cidade.Nome.ToLower().Contains(query)) ||
-                          (p.Hospital?.Nome != null && p.Hospital.Nome.ToLower().Contains(query)));
+                          (p.Hospital != null && p.Hospital.Nome != null && p.Hospital.Nome.ToLower().Contains(query)));
         }
     }
 }
