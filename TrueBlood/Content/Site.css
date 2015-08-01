@@ -1,6 +1,9 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Dosis', sans-serif;
+    background-image: url('images/bg.jpg');
+  
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -13,5 +16,47 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+
+}
+
+.navHeader {
+    background:#9f1305;
+}
+
+.navbar-brand {
+    font-size:2.2em;
+    display:inline;
+    float:right;
+}
+
+.paciente, .doador {
+    border: 1px solid #9f1305;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: white;
+    height:auto;
+    padding:5px;
+    text-align:center;
+ 
+}
+.doador form {
+    text-align:left;
+}
+
+doadorTitulo {
+    float:none;
+}
+
+.doador h2, .paciente h2 {
+    color:#9f1305;
+}
+
+.doador img, .paciente img {
+
+}
+
+.pacientePesquisa, .hospitalPesquisa {
+    width:65%;
+    border:1px solid #9f1305;
 }
