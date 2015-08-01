@@ -6,9 +6,18 @@ namespace TrueBlood.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "Blood True";
 
             return View();
         }
+
+        public ActionResult ListaPacientes()
+        {
+            ViewBag.Title = "Lista de Pacientes";
+
+            return View();
+        }
+
+      
     }
 }
